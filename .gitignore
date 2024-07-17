@@ -1,6 +1,7 @@
 /.env
 /posts.db
 /.idea
+/__pycache__
 
 # Default ignored files
 /shelf/
