@@ -58,12 +58,12 @@ async def send_post_to_telegram(post, is_long_caption=False):
         if not db.is_post_published(post.shortcode):
             db.save_post_id(post.shortcode)
     except TimedOut as e:
-        time.sleep(6)
+        time.sleep(20)
         print(f"Timed out: {e}. Retrying...")
         await retry(send_post_to_telegram, post)
     except TelegramError as e:
         if e.message == 'Message caption is too long':
-            time.sleep(6)
+            time.sleep(20)
             await send_post_to_telegram(post, True)
         else:
             error_message = f"ERROR: {e}\nurl: https://www.instagram.com/p/{post.shortcode}"
@@ -89,7 +89,7 @@ async def main():
     for post in posts:
         if not db.is_post_published(post.shortcode):
             await send_post_to_telegram(post)
-            time.sleep(6)
+            time.sleep(20)
 
 
 async def main_loop():
@@ -97,7 +97,7 @@ async def main_loop():
     while True:
         try:
             await main()
-            time.sleep(60)
+            time.sleep(30)
         except asyncio.CancelledError:
             break
 
