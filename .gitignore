@@ -1,5 +1,6 @@
 /.env
 /posts.db
+/.idea
 
 # Default ignored files
 /shelf/
