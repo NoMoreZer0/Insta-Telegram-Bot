@@ -1,0 +1,15 @@
+version: '3.8'
+
+name: "Insta-Telegram-Bot"
+
+services:
+  bot:
+    build: .
+    container_name: telegram_bot
+    environment:
+      - API_TOKEN = 7470826451:AAFGTUilCo9jkpOan7tMKUEFkDDwmVVNIy4
+      - INSTA_USERNAME = astana.hub
+      - CHANNEL_ID = -1002246684246
+    volumes:
+      - .:/app
+    restart: always
