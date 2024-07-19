@@ -7,9 +7,9 @@ services:
     build: .
     container_name: telegram_bot
     environment:
-      - API_TOKEN = 7470826451:AAFGTUilCo9jkpOan7tMKUEFkDDwmVVNIy4
-      - INSTA_USERNAME = astana.hub
-      - CHANNEL_ID = -1002246684246
+      - API_TOKEN = ${API_TOKEN}
+      - INSTA_USERNAME = ${INSTA_USERNAME}
+      - CHANNEL_ID = ${CHANNEL_ID}
     volumes:
       - .:/app
     restart: always
