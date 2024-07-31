@@ -114,7 +114,7 @@ async def main_loop():
     while True:
         try:
             await main()
-            time.sleep(30)
+            time.sleep(120)
         except asyncio.CancelledError:
             break
 
