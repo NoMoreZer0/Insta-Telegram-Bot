@@ -1,0 +1,15 @@
+version: '3.8'
+
+name: "insta-telegram-bot-1"
+
+services:
+  bot:
+    build: .
+    container_name: telegram_bot_1
+    environment:
+      - API_TOKEN = ${API_TOKEN}
+      - INSTA_USERNAME = ${INSTA_USERNAME}
+      - CHANNEL_ID = ${CHANNEL_ID}
+    volumes:
+      - .:/app
+    restart: always

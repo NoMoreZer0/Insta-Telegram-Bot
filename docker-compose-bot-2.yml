@@ -1,11 +1,11 @@
 version: '3.8'
 
-name: "insta-telegram-bot"
+name: "insta-telegram-bot-2"
 
 services:
   bot:
     build: .
-    container_name: telegram_bot
+    container_name: telegram_bot_2
     environment:
       - API_TOKEN = ${API_TOKEN}
       - INSTA_USERNAME = ${INSTA_USERNAME}
