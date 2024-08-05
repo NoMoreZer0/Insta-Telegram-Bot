@@ -55,7 +55,7 @@ async def send_post_to_telegram(post, is_long_caption=False):
                 await send_photo(post.url)
                 await send_message(post.caption)
             else:
-                await send_message(post.caption)
+                await send_photo(url=post.url, caption=post.caption)
         elif post.typename == 'GraphVideo':
             if is_long_caption:
                 await send_video(post.video_url)
